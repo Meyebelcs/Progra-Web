@@ -6,8 +6,17 @@
     font-family: sans-serif;
 }
 
+.warnings{
+    width: 200px;
+    text-align:center;
+    margin:auto;
+    color:#c31515;
+    padding-top: 20px;
+}
+
 body{
     background-color: white;
+    background-image: "logo.png";
 }
 
 main{
