@@ -31,7 +31,7 @@ main{
     /* max-width: 350px; */
     max-width: 450px;
     height:800px;
-    margin:50px 200px;
+    margin:10px 200px;
     position: relative;
 }
 
@@ -46,7 +46,7 @@ main{
 }
 
 .caja_trasera div{
-    margin:100px 40px;
+    margin: 65px 40px;
     color:white;
     transition: all 500ms;
 }
@@ -86,7 +86,7 @@ main{
     width: 100%;
     max-width: 415px;
     position: relative;
-    top:-650px;
+    top:-530px;
     left: 20px;
 
     transition:  500ms cubic-bezier(0.175,0.885,0.320,1.275);
@@ -94,7 +94,7 @@ main{
 
 .contenedor_login-register form.formulario_login{
     width: 100%;
-    padding: 100px 20px;
+    padding: 60px 20px;
     background: white;
     position: absolute;
     border-radius: 20px;
@@ -115,24 +115,59 @@ main{
 .contenedor_login-register form h2{
     font-size: 30px;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     color:#3d3d3d;
 }
 
 .contenedor_login-register form input{
     width: 100%;
-    margin-top: 20px;
+    margin-top: 30px;
     padding: 10px;
     border:none;
+    border-radius: 4px;
     background-color: #f2f2f2;
     font-size: 16px;
     outline: none;
 }
 
+.contenedor_login-register form input.input_foto{
+    margin-top: 15px;
+}
+
+.contenedor_login-register form input.input_fecha{
+    margin-top: 15px;
+}
+
+.contenedor_login-register form input#ConfirmarContraseña{
+    margin-bottom: 20px;
+}
+
+.form-control.success input{
+    border: 2px solid #4fa64f;
+}
+
+.form-control.error input{
+    border: 2px solid #ed4337;
+}
+
+.form-control.success i.check-circle{
+    visibility: visible;
+    fill:#4fa64f;
+}
+
+.form-control.error i.exclamation-circle{
+    visibility: visible;
+    fill:#ed4337;
+}
+
+.form-control.error small{
+    visibility: visible;
+    color:#ed4337;
+}
 
 .contenedor_login-register form button{
     padding: 10px 40px;
-    margin-top: 40px;
+    margin-top: 20px;
     border:none;
     font-size: 14px;
     background-color: #6592fe;
@@ -142,7 +177,7 @@ main{
 }
 
 .contenedor_login-register form p{
-    margin-top: 20px;
+    margin-top: 10px;
     font-size: 16px;
     color:#3d3d3d;
     font-weight: 600;
@@ -153,6 +188,44 @@ main{
     color: white;
 }
 
+.form-control i{
+    position: absolute;
+    /* top: 40px; *//* -26.5px; */
+    margin-top: 40.5px;
+    right: 30px;
+    visibility: hidden;
+}
+
+.form-control i.icon_fecha{
+    position: absolute;
+    margin-top: -18px;
+    right: 213px;
+}
+
+.form-control i.icon_foto{
+    position: absolute;
+    margin-top: -18px;
+    right: 270px;
+}
+
+.form-control small{
+    position: absolute;
+    margin-top:74px;
+    left: 23px;
+    visibility: hidden;
+}
+
+.form-control small.small_fecha{
+    position: absolute;
+    margin-top: -17px;
+    left: 210px;
+}
+
+.form-control small.small_foto{
+    position: absolute;
+    margin-top: -17px;
+    left: 150px;
+}
 
 .formulario_login{
     opacity: 1;
