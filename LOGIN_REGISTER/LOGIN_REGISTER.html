@@ -8,6 +8,7 @@
     <!-- Link css -->
    <link rel="stylesheet" href="LOGIN_REGISTER.css">
 </head>
+
 <body>
     <main>
         <div class="contenedor_todo">
@@ -25,17 +26,10 @@
             </div>
             <div class="contenedor_login-register">
                 <!-- Login -->
-                <form action="" class="formulario_login" method="POST" id="login">
+                <form action="" class="formulario_login" method ="post" id="login">
                     <h2>Inicar sesión</h2>
-                    <input type="text" placeholder="Nombre de usuario" id="Usernamelogin">
-                    <input type="password" placeholder="Contraseña" id="passwordLogin">
-                    <button type="submit" id="login" >Entrar</button>
-                </form>
-                <!-- Registro -->
-                <form action="" id="register" class="formulario_register">
-                    <h2>Registrarse</h2>
                     <div class="form-control">
-                        <input type="text" id="nombres" placeholder="Nombres">
+                        <input type="text" placeholder="Nombre de usuario" id="Usernamelogin" >
                         <i class="icon check-circle">
                             <svg 
                             xmlns="http://www.w3.org/2000/svg" 
@@ -57,7 +51,59 @@
                         <small class="small_register">Error message</small>
                     </div>
                     <div class="form-control">
-                        <input type="text" id="apellidos" placeholder="Apellidos">
+                        <input type="password" placeholder="Contraseña" id="passwordLogin">
+                        <i class="icon check-circle">
+                            <svg 
+                            xmlns="http://www.w3.org/2000/svg" 
+                            width="1em" 
+                            height="1em" 
+                            viewBox="0 0 512 512">
+                            <path 
+                            d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256s114.6 256 256 256zm113-303L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/></svg>
+                        </i>
+                        <i class="icon exclamation-circle">
+                            <svg 
+                            xmlns="http://www.w3.org/2000/svg" 
+                            width="1em" 
+                            height="1em" 
+                            viewBox="0 0 512 512">
+                            <path
+                            d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256s114.6 256 256 256zm0-384c13.3 0 24 10.7 24 24v112c0 13.3-10.7 24-24 24s-24-10.7-24-24V152c0-13.3 10.7-24 24-24zm32 224c0 17.7-14.3 32-32 32s-32-14.3-32-32s14.3-32 32-32s32 14.3 32 32z"/></svg>
+                        </i>
+                        <small class="small_register">Error message</small>
+                    </div>
+                    <button type="submit" id="entrar" >Entrar</button>
+                </form>
+
+
+
+                <!-- Registro -->
+                <form action="" id="register" method ="post" class="formulario_register">
+                    <h2>Registrarse</h2>
+                    <div class="form-control">
+                        <input type="text" id="nombres" placeholder="Nombres" onkeypress="return validaLetras(event);" >
+                        <i class="icon check-circle">
+                            <svg 
+                            xmlns="http://www.w3.org/2000/svg" 
+                            width="1em" 
+                            height="1em" 
+                            viewBox="0 0 512 512">
+                            <path 
+                            d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256s114.6 256 256 256zm113-303L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/></svg>
+                        </i>
+                        <i class="icon exclamation-circle">
+                            <svg 
+                            xmlns="http://www.w3.org/2000/svg" 
+                            width="1em" 
+                            height="1em" 
+                            viewBox="0 0 512 512">
+                            <path
+                            d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256s114.6 256 256 256zm0-384c13.3 0 24 10.7 24 24v112c0 13.3-10.7 24-24 24s-24-10.7-24-24V152c0-13.3 10.7-24 24-24zm32 224c0 17.7-14.3 32-32 32s-32-14.3-32-32s14.3-32 32-32s32 14.3 32 32z"/></svg>
+                        </i>
+                        <small class="small_register">Error message</small>
+                    </div>
+                    <div class="form-control">
+                        <input type="text" id="apellidos" placeholder="Apellidos" onkeypress="return validaLetras(event);">
                         <i class="icon check-circle">
                             <svg 
                             xmlns="http://www.w3.org/2000/svg" 
@@ -186,7 +232,7 @@
                             <path
                             d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256s114.6 256 256 256zm0-384c13.3 0 24 10.7 24 24v112c0 13.3-10.7 24-24 24s-24-10.7-24-24V152c0-13.3 10.7-24 24-24zm32 224c0 17.7-14.3 32-32 32s-32-14.3-32-32s14.3-32 32-32s32 14.3 32 32z"/></svg>
                         </i>
-                        <input type="date" name="" class="input_fecha" id="fecha">
+                        <input type="date" name="" required class="input_fecha" id="fecha">
                         <small class="small_fecha">Error message</small>
                     </div>
                     <div class="form-control">
