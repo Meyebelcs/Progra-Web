@@ -12,7 +12,7 @@ let cajaTraseraLogin=document.querySelector(".caja_trasera-login");
 let cajaTraseraRegister=document.querySelector(".caja_trasera-register");
 
 //LOGIN
-const formlogin = document.querySelector("login");
+const formlogin = document.getElementById("login");
 
 const Username= document.getElementById("Usernamelogin");
 const password= document.getElementById("passwordLogin");
@@ -27,12 +27,14 @@ const Usuario= document.getElementById("Usuario");
 const Contraseña= document.getElementById("Contraseña");
 const Contraseña2= document.getElementById("ConfirmarContraseña");
 const Foto= document.getElementById("foto");
+const Fecha= document.getElementById("fecha");
 
+//variables
 let num=0;
 
 function login(){
 
-    //se agrega el detector de eventos del formulario de registro utilizando el método:submit addEventListener()
+    //se agrega el detector de eventos del formulario de login utilizando el método:submit addEventListener()
     formlogin.addEventListener('submit', (e)=>{
         e.preventDefault(); //Para evitar que se envíe el formulario, llame al método del objeto dentro del controlador de eventos de la siguiente manera
         
@@ -125,12 +127,14 @@ function registerf(){
              setSuccesFor(Nombres);
              num+=1;
          }
+
          if(Apellidosnew.length<1){
              setErrorFor(Apellidos,"El apellido no puede estar vacío");
           }else{
              setSuccesFor(Apellidos);
              num+=1;
           }
+
           if(Foto.value.length<1){
              setErrorFor(Foto,"No ha agregado ninguna foto");
           }else{
@@ -153,12 +157,16 @@ function registerf(){
               setSuccesFor(Usuario);
               num+=1;
           }
-          if(Contraseñanew.length<1){
-             setErrorFor(Contraseña,"La contraseña no puede estar vacía");
-          }else{
-              setSuccesFor(Contraseña);
-              num+=1;
+
+          if(Contraseñanew === '') {
+            setErrorFor(Contraseña,"La contraseña no puede estar vacía");
+          } else if (!isPassword(Contraseñanew)) {
+            setErrorFor(Contraseña, 'No ingresó una contraseña válida');
+          } else {
+             setSuccesFor(Contraseña);
+             num+=1;
           }
+
           if(Contraseña2new.length<1){
              setErrorFor(Contraseña2,"Favor de confirmar la contraseña");
           }else{
@@ -169,13 +177,24 @@ function registerf(){
              setErrorFor(Contraseña2,"La contraseña es diferente a la ingresada, inténtalo de nuevo");
              }
           }
+
+          if(Fecha.value.length<1){
+            setErrorFor(Fecha,"No seleccionó ninguna fecha");
+          }else if(validateDate(Fecha.value)){
+            setErrorFor(Fecha,"La fecha no puede ser mayor al día actual");
+          }else if(validaEdad(Fecha.value)<13){
+            setErrorFor(Fecha,"Debe ser mayor a 13 años");
+          }else{ 
+            setSuccesFor(Fecha);
+            num+=1;
+          }
          
          //si llega a este punto logró todas las validaciones correctamente
          //Entonces guardará la informacion
-         if(num===7){
-            alert("Se registró correctamente");
-            return ;
-         }
+        // if(num===8){
+          //  alert("Se registró correctamente");
+            //return;
+         //}
          
 
     })
@@ -205,11 +224,37 @@ function validaLetras(e){
         return false;
     }
 }
+function isPassword(contra){
+return /^(?=.*[A-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[.])\S{8}$/.test(contra);
+
+}
 
 function isEmail(email) {
 	return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
 }
 
+function validaEdad(date){
+    
+    var today=new Date();
+    var birthday= new Date(date);
+    var year= today.getFullYear()-birthday.getFullYear();
+    var month=today.getMonth()-birthday.getMonth();
+    if(month<0||(month==0 && today.getDate()-1<birthday.getDate())){
+        year--;
+    }
+    return year;
+}
+
+function validateDate(date){
+    
+    var today=new Date();
+    var birthday= new Date(date);
+    if(birthday>today){
+        return true;
+    }else{
+        return false;
+    }
+}
 
 function setErrorFor(input, message){
     const formControl=input.parentElement;//.form-control

@@ -6,13 +6,6 @@
     font-family: sans-serif;
 }
 
-.warnings{
-    width: 200px;
-    text-align:center;
-    margin:auto;
-    color:#c31515;
-    padding-top: 20px;
-}
 
 body{
     background-color: white;
@@ -196,6 +189,7 @@ main{
     visibility: hidden;
 }
 
+/* fecha y foto muestran el icono a un lado*/
 .form-control i.icon_fecha{
     position: absolute;
     margin-top: -18px;
@@ -215,6 +209,7 @@ main{
     visibility: hidden;
 }
 
+/*Small fecha y foto muestran el aviso a un lado*/
 .form-control small.small_fecha{
     position: absolute;
     margin-top: -17px;
@@ -234,37 +229,4 @@ main{
 
 .formulario_register{
     display: none;
-}
-
-@media screen and(max-width:850){
-    main{
-        margin-top: 5px;
-    }
-
-    .contenedor_todo{
-        margin: auto;
-    }
-
-    .caja_trasera{
-        max-width: 350px;
-        height: 300px;
-        margin:auto;
-    }
-
-    .caja_trasera div{
-        margin:0px;
-        position: absolute;
-    }
-
-    /* formularios */
-
-    .contenedor_login-register{
-        top:-10px;
-        left:-5px;
-        margin:auto;
-    }
-
-    .contenedor_login-register form{
-        position: relative;
-    }
 }
