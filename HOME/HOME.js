@@ -101,3 +101,60 @@ Bg3.addEventListener('click', () =>{
     Bg2.classList.remove('active');
     changeBG();
 });
+
+//=======================PUBLICATIONS============================
+
+$(document).ready(function () {
+
+    $("#btn-create-post").click(function () {
+            if($( "#create-post" ).val().trim()===""){
+                alert("campos vacíos");
+                return;
+            }
+            markup = "<div class=\"feed\">"+
+            "<div class=\"head\">"+
+                "<div class=\"user\">"+
+                    "<div class=\"profile-photo\">"+
+                        "<img src=\"../images/profile-13.jpg\">"+
+                    "</div>"+
+                    "<div class=\"ingo\">"+
+                        "<h3>  Denisse Cardoza</h3>"+
+                        "<small>  FCFM, HACE 15 MINUTOS</small>"+
+                    "</div>"+
+                "</div>"+
+                "<span class=\"edit\">"+
+                    "<i class=\"uil uil-ellipsis-h\"></i>"+
+                "</span>"+
+            "</div>"+
+
+            "<div class=\"caption\">"+
+            "<p> "+$( "#create-post" ).val()+"</p>"+
+            "</div>"+
+
+            "<div class=\"action-buttons\">"+
+                "<div class=\"interaction-buttons\">"+
+                    "<span><i class=\"uil uil-heart\"></i></span>"+
+                    "<span><i class=\"uil uil-comment-dots\"></i></span>"+
+                    "<span><i class=\"uil uil-share\"></i></span>"+
+                "</div>"+
+                "<div class=\"bookmark\">"+
+                    "<span><i class=\"uil uil-bookmark\"></i></span>"+
+                "</div>"+
+            "</div>"+
+            
+            "<div class=\"liked-by\">"+
+                "<span><img src=\"../images/profile-15.jpg\"></span>"+
+                "<span><img src=\"../images/profile-12.jpg\"></span>"+
+                "<span><img src=\"../images/profile-11.jpg\"></span>"+
+                "<p>Le gusta a <b>Boing Eguia</b> y <b>57 personas más</b> </p>"+
+            "</div>"+
+
+            
+            "<div class=\"comments text-muted\">Ver los 15 comentarios</div>"+
+        "</div>";
+
+            $( "#create-post" ).val("");
+            tableBody = $("body .feeds");
+            tableBody.prepend(markup);
+});
+}); 
