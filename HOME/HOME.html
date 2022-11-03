@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -24,8 +25,11 @@
             <div class="create">
                 <label class=" btn btn-primary" for="create-post">Create</label>
 
-                <div class="profile-photo">
-                    <img src="../images/mel.jpg">
+
+                <div class="click-profile">
+                    <div class="profile-photo" id="profile-edit">
+                        <img src="../images/mel.jpg">
+                    </div>
                 </div>
 
             </div>
@@ -37,8 +41,8 @@
         <div class="container">
             <!--=====================LEFT===================-->
             <div class="left">
-                <a  class="profile">
-                    <div class="profile-photo">
+                <a  class="profile" >
+                    <div class="profile-photo" >
                         <img src="../images/mel.jpg">
                     </div>
                     <div class="handle">
@@ -51,17 +55,21 @@
             <!---------------------SIDEBAR-------------->
             <div class="sidebar">
                 <a class="menu-item active">
-                    <span><i class="uil uil-home"></i></span> <h3>Home</h3>
+                    <span><i class="uil uil-cloud-heart"></i></span> <h3>Más recientes</h3>
                 </a>
                 <a class="menu-item">
-                    <span><i class="uil uil-compass"></i></span> <h3>Explorar</h3>
+                    <span><i class="uil uil-envelope-heart"></i></span> <h3>Más comentadas</h3>
                 </a>
+                <a class="menu-item">
+                    <span><i class="uil uil-file-heart"></i></span> <h3>Más votadas</h3>
+                </a>
+
                 <a class="menu-item" id="notifications">
                     <span><i class="uil uil-bell"><small class="notification-count">9+</small></i></span> <h3>Notificaciones</h3>
                     <!------------------NOTIFICATION POPUP--------------------->
                     <div class="notifications-popup">
                         <div>
-                            <div class="profile-photo">
+                            <div class="profile-photo" >
                                 <img src="../images/profile-2.jpg" >
                             </div>
                             <div class="notification-body">
@@ -120,12 +128,6 @@
                 </a>
                 <a class="menu-item" id="messages-notifications">
                     <span><i class="uil uil-envelope-alt" ><small class="notification-count">6</small></i></span> <h3>Mensajes</h3>
-                </a>
-                <a class="menu-item">
-                    <span><i class="uil uil-bookmark"></i></span> <h3>Archivado</h3>
-                </a>
-                <a class="menu-item">
-                    <span><i class="uil uil-chart-line"></i></span> <h3>Análisis</h3>
                 </a>
                 <a class="menu-item" id="theme">
                     <span><i class="uil uil-moon"></i></span> <h3>Modo Nocturno</h3>
@@ -705,6 +707,217 @@
         </div>
     </div>
 </div>
+
+<!--=================EDIT PROFILE====================-->
+<div class="customize-profile">
+    <div class="card">
+        <!------------- PROFILE INFO-------------->
+        <div class="profile-info">
+           
+            <form action="" id="form-profile" method ="post" class="formulario_register">
+
+                <center>
+                    <div class="profile-photo" >
+                        <img src="../images/mel.jpg" alt="">
+                    </div>
+                </center>
+
+                <h2>@arleth_mel</h2>
+                <p class="texted-muted">Datos personales</p>
+               
+                <div class="form-control">
+                    <input type="text" id="nombres" placeholder="Melany Arleth" onkeypress="return validaLetras(event);" >
+                    <i class="icon check-circle">
+                        <svg 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        width="1em" 
+                        height="1em" 
+                        viewBox="0 0 512 512">
+                        <path 
+                        d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256s114.6 256 256 256zm113-303L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/></svg>
+                    </i>
+                    <i class="icon exclamation-circle">
+                        <svg 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        width="1em" 
+                        height="1em" 
+                        viewBox="0 0 512 512">
+                        <path
+                        d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256s114.6 256 256 256zm0-384c13.3 0 24 10.7 24 24v112c0 13.3-10.7 24-24 24s-24-10.7-24-24V152c0-13.3 10.7-24 24-24zm32 224c0 17.7-14.3 32-32 32s-32-14.3-32-32s14.3-32 32-32s32 14.3 32 32z"/></svg>
+                    </i>
+                    <small class="small_register">Error message</small>
+                </div>
+                <div class="form-control">
+                    <input type="text" id="apellidos" placeholder="Jimenez Gomez" onkeypress="return validaLetras(event);">
+                    <i class="icon check-circle">
+                        <svg 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        width="1em" 
+                        height="1em" 
+                        viewBox="0 0 512 512">
+                        <path 
+                        d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256s114.6 256 256 256zm113-303L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/></svg>
+                    </i>
+                    <i class="icon exclamation-circle">
+                        <svg 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        width="1em" 
+                        height="1em" 
+                        viewBox="0 0 512 512">
+                        <path
+                        d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256s114.6 256 256 256zm0-384c13.3 0 24 10.7 24 24v112c0 13.3-10.7 24-24 24s-24-10.7-24-24V152c0-13.3 10.7-24 24-24zm32 224c0 17.7-14.3 32-32 32s-32-14.3-32-32s14.3-32 32-32s32 14.3 32 32z"/></svg>
+                    </i>
+                    <small class="small_register  error">Error message</small>
+                </div>
+                <div class="form-control">
+                    <input type="email" id="Correo" placeholder="arleth.melany@hotmail.com">
+                    <i class="icon check-circle">
+                        <svg 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        width="1em" 
+                        height="1em" 
+                        viewBox="0 0 512 512">
+                        <path 
+                        d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256s114.6 256 256 256zm113-303L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/></svg>
+                    </i>
+                    <i class="icon exclamation-circle">
+                        <svg 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        width="1em" 
+                        height="1em" 
+                        viewBox="0 0 512 512">
+                        <path
+                        d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256s114.6 256 256 256zm0-384c13.3 0 24 10.7 24 24v112c0 13.3-10.7 24-24 24s-24-10.7-24-24V152c0-13.3 10.7-24 24-24zm32 224c0 17.7-14.3 32-32 32s-32-14.3-32-32s14.3-32 32-32s32 14.3 32 32z"/></svg>
+                    </i>
+                    <small class="small_register">Error message</small>
+                </div>
+               
+                <div class="form-control">
+                    <input type="password" id="Contraseña" placeholder="Contraseña">
+                    <i class="icon check-circle">
+                        <svg 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        width="1em" 
+                        height="1em" 
+                        viewBox="0 0 512 512">
+                        <path 
+                        d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256s114.6 256 256 256zm113-303L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/></svg>
+                    </i>
+                    <i class="icon exclamation-circle">
+                        <svg 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        width="1em" 
+                        height="1em" 
+                        viewBox="0 0 512 512">
+                        <path
+                        d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256s114.6 256 256 256zm0-384c13.3 0 24 10.7 24 24v112c0 13.3-10.7 24-24 24s-24-10.7-24-24V152c0-13.3 10.7-24 24-24zm32 224c0 17.7-14.3 32-32 32s-32-14.3-32-32s14.3-32 32-32s32 14.3 32 32z"/></svg>
+                    </i>
+                    <small class="small_register">Error message</small>
+                </div>
+
+                <div class="form-control">
+                    <input type="password" id="ConfirmarContraseña" placeholder="Confirmar contraseña">
+                    <i class="icon check-circle">
+                        <svg 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        width="1em" 
+                        height="1em" 
+                        viewBox="0 0 512 512">
+                        <path 
+                        d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256s114.6 256 256 256zm113-303L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/></svg>
+                    </i>
+                    <i class="icon exclamation-circle">
+                        <svg 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        width="1em" 
+                        height="1em" 
+                        viewBox="0 0 512 512">
+                        <path
+                        d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256s114.6 256 256 256zm0-384c13.3 0 24 10.7 24 24v112c0 13.3-10.7 24-24 24s-24-10.7-24-24V152c0-13.3 10.7-24 24-24zm32 224c0 17.7-14.3 32-32 32s-32-14.3-32-32s14.3-32 32-32s32 14.3 32 32z"/></svg>
+                    </i>
+                    <small class="small_register">Error message</small>
+                </div>
+                <div class="form-control">
+                    <p>Fecha de nacimiento</p>
+                    <i class="icon_fecha check-circle">
+                        <svg 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        width="1em" 
+                        height="1em" 
+                        viewBox="0 0 512 512">
+                        <path 
+                        d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256s114.6 256 256 256zm113-303L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/></svg>
+                    </i>
+                    <i class="icon_fecha exclamation-circle">
+                        <svg 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        width="1em" 
+                        height="1em" 
+                        viewBox="0 0 512 512">
+                        <path
+                        d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256s114.6 256 256 256zm0-384c13.3 0 24 10.7 24 24v112c0 13.3-10.7 24-24 24s-24-10.7-24-24V152c0-13.3 10.7-24 24-24zm32 224c0 17.7-14.3 32-32 32s-32-14.3-32-32s14.3-32 32-32s32 14.3 32 32z"/></svg>
+                    </i>
+                    <input type="date" name=""  class="input_fecha" id="fecha">
+                    <small class="small_fecha">Error message</small>
+                </div>
+                <div class="form-control">
+                    <p>Foto de perfil</p>
+                    <i class="icon_foto check-circle">
+                        <svg 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        width="1em" 
+                        height="1em" 
+                        viewBox="0 0 512 512">
+                        <path 
+                        d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256s114.6 256 256 256zm113-303L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/></svg>
+                    </i>
+                    <i class="icon_foto exclamation-circle">
+                        <svg 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        width="1em" 
+                        height="1em" 
+                        viewBox="0 0 512 512">
+                        <path
+                        d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256s114.6 256 256 256zm0-384c13.3 0 24 10.7 24 24v112c0 13.3-10.7 24-24 24s-24-10.7-24-24V152c0-13.3 10.7-24 24-24zm32 224c0 17.7-14.3 32-32 32s-32-14.3-32-32s14.3-32 32-32s32 14.3 32 32z"/></svg>
+                    </i>
+                    <small class="small_foto">Error message</small>
+                    <input accept="image/*" class="input_foto" type="file" id="foto">
+                </div>
+                <button class=" btn btn-profile-info" type="subtmit" id="Save-Changes" >Guardar cambios</button>
+                
+                
+                <!--   
+                    <label class=" btn btn-profile-info" type="submit"  for="Save-Changes">Guardar cambios</label>
+                    <button type="subtmit" id="registerf" >Guardar cambios</button>
+                    <p class="warnings" id="warnings">gtgt</p> 
+                -->
+            </form>
+        </div>
+    </div>
+</div>
+
+<!---------------------------FOOTER--------------------------->
+<div class="footer-content">
+
+</div>
+<footer>
+    <div class="footer-content">
+       
+        <h2>Facultad de Ciencias Físico Matemáticas</h2>
+        <h3>Programación Web</h3>
+        <h1>1904119 Melany Arleth Jiménez Gómez </h1>
+        <h1>1896868 Denisse Alejandra Cardoza Pezina </h1>
+        <ul class="socials">
+            <li><a href="#"><i class="uil uil-facebook"></i></i></a></li>
+            <li><a href="#"><i class="uil uil-twitter"></i></i></a></li>
+            <li><a href="#"><i class="uil uil-youtube"></i></i></a></li>
+        </ul>
+    </div>
+    <div class="footer-bottom">
+        <p>copyright &copy;2022 codeOpacity. designed by <span>Meyebelcs</span></p>
+    </div>
+</footer>
+
 <script src="./HOME.js"></script>
 </body>
 </html>

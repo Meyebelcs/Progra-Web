@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
+
 :root{
     --primary-color-hue:252;
     --dark-color-lightness:17%;
@@ -24,6 +25,8 @@
 
     --sticky-top-left: 5.4rem;
     --sticky-top-right: -18rem;
+
+    
 }
 
 *,
@@ -44,6 +47,7 @@ body{
  color: var(--color-dark);
  background: var(--color-light);
  overflow-x: hidden;
+
 }
 
 /*GENERAL STYLES*/
@@ -133,6 +137,11 @@ nav .create{
 
 
 }
+
+nav .click-profile{
+    cursor: pointer;
+    transition: all 300ms ease;
+}
 /*-----------MAIN-----------*/
 main {
     position:relative;
@@ -166,7 +175,9 @@ main .container .left .profile{
     align-items :center;
     column-gap: 1rem;
     width: 100%;
+   
 }
+
 
 /*----------- sidebar-------------------*/
 
@@ -565,7 +576,7 @@ main .container .right {
     display: grid;
     place-items: center;
     font-size: 0.9rem;
-    /*se activa y desactivan las notificaciones*/
+    /*se activa y desactivan las notificaciones display: none;*/
     display: none;
 }
 
@@ -627,6 +638,228 @@ main .container .right {
     border-radius: 50%;
     margin-right: 1rem;
 }
+/*--------------profile info edit-----------------------*/
+.customize-profile {
+    background: rgba(255, 255, 255, 0.5);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    text-align: center;
+    display: grid;
+    place-items: center;
+    font-size: 0.9rem;
+    /*se activa y desactivan las notificaciones display: none;*/
+    display: none;
+}
+
+.customize-profile .card{
+    background: var(--color-white);
+    padding: 0.7rem;
+    border-radius: var(--card-border-radius);
+    width: 50%;
+    box-shadow: 0 0 1rem var(--color-primary);
+}
+
+.customize-profile .profile-info{
+    margin-top: 1rem;
+}
+/*---------------FORMULARIO PERFIL------------------*/
+
+.formulario_register{
+    color: black;
+   /*display: none;*/ 
+   
+}
+
+.btn-profile-info{
+    margin-top: 1rem;
+    background: var(--color-primary);
+    color:white;
+}
+
+.profile-info form button:hover{
+    background-color:  #36c3fe;
+    color: white;
+}
+
+.profile-info form h2{
+    font-size: 25px;
+    text-align: center;
+    margin-bottom: 10px;
+    color:#3d3d3d;
+}
+
+.profile-info form input{
+    width: 60%;
+    margin-top: 30px;
+    padding: 10px;
+    border:none;
+    border-radius: 4px;
+    background-color: #f2f2f2;
+    font-size: 16px;
+    outline: none;
+}
+
+.profile-info form input.input_foto{
+    margin-top: 15px;
+}
+
+.profile-info form input.input_fecha{
+    margin-top: 15px;
+}
+
+.profile-info form input#ConfirmarContraseña{
+    margin-bottom: 20px;
+}
+
+.form-control.success input{
+    border: 2px solid #4fa64f;
+}
+
+.form-control.error input{
+    border: 2px solid #ed4337;
+}
+
+.form-control.success i.check-circle{
+    visibility: visible;
+    fill:#4fa64f;
+}
+
+.form-control.error i.exclamation-circle{
+    visibility: visible;
+    fill:#ed4337;
+}
+
+.form-control.error small{
+    visibility: visible;
+    color:#ed4337;
+}
+
+.form-control i{
+    position: absolute;
+    margin-top: 40.5px;
+    right: 30px;
+    visibility: hidden;
+}
+
+/* fecha y foto muestran el icono a un lado*/
+.form-control i.icon_fecha{
+    position: absolute;
+    margin-top: -18px;
+    right: 213px;
+}
+
+.form-control i.icon_foto{
+    position: absolute;
+    margin-top: -18px;
+    right: 270px;
+}
+
+.form-control small{
+    position: absolute;
+    margin-top:74px;
+    left: 23px;
+    visibility: hidden;
+}
+
+/*Small fecha y foto muestran el aviso a un lado*/
+.form-control small.small_fecha{
+    position: absolute;
+    margin-top: -17px;
+    left: 210px;
+}
+
+.form-control small.small_foto{
+    position: absolute;
+    margin-top: -17px;
+    left: 150px;
+}
+
+
+
+/*------------footer-------------------*/
+footer{
+margin-top: 10rem;
+    position: relative;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(158, 109, 236, 0.79));
+    height: auto;
+    width: 100vw;
+    font-family: "Open Sans";
+    padding-top: 40px;
+    color: #fff;
+}
+.footer-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+.footer-content h3 {
+    color: var(--color-primary);
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    line-height: 3rem;
+}
+.footer-content h2{
+    color: var(--color-dark);
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    line-height: 5rem;
+}
+.footer-content h1{
+    
+    color: var(--color-dark);
+    padding-bottom: 0.01rem;
+    font-size: 1rem;
+    font-weight: 400;
+    text-transform: capitalize;
+    line-height: 1rem;
+}
+.socials{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0 3rem 0;
+}
+.socials li{
+    margin: 0 10px;
+}
+.socials a{
+    text-decoration: none;
+    color: #fff;
+}
+.socials a i{
+    font-size: 1.1rem;
+    transition: color .4s ease;
+}
+.socials a:hover i{
+    color:var(--color-primary)
+}
+.footer-bottom{
+    background: #000;
+    width: 100vw;
+    padding: 20px 0;
+    text-align: center;
+}
+.footer-bottom p{
+    font-size: 14px;
+    word-spacing: 2px;
+    text-transform: capitalize;
+}
+.footer-bottom span{
+    text-transform: uppercase;
+    opacity: .4;
+    font-weight: 200;
+}
 
 /*=========================
 MEDIA QUERIES FOR SMALL LAPTOPS AND BIG TABETS
@@ -654,6 +887,9 @@ MEDIA QUERIES FOR SMALL LAPTOPS AND BIG TABETS
         display: none;
     }
     .customize-theme .card{
+        width: 80vw;
+    }
+    .customize-profile .card{
         width: 80vw;
     }
 }
@@ -701,5 +937,9 @@ MEDIA QUERIES FOR SMALL TABLETS AND MOBILE PHONES
     .customize-theme .card{
         width: 92vw;
     }
+    .customize-profile .card{
+        width: 92vw;
+    }
 }
+
 
