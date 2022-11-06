@@ -4,6 +4,13 @@
 const profileclick = document.querySelector('#profile-edit');
 const profileModal = document.querySelector('.customize-profile');
 
+//-----------------------SPOILER FEED------------------------
+const acceptspoiler = document.querySelector('#spoiler-feed');
+const imageDataTitle = document.querySelector('.image-data_title');
+const imageDataText = document.querySelector('.image-data_text');
+const buttonSpoiler = document.querySelector('.image-data .btn-primary');
+const photoCostume = document.querySelector('.middle .feed .photo::after');
+
 //-------------------------SIDEBAR--------------------------
 const menuItems = document.querySelectorAll('.menu-item');
 
@@ -17,6 +24,16 @@ const Bg1= document.querySelector('.bg-1');
 const Bg2= document.querySelector('.bg-2');
 const Bg3= document.querySelector('.bg-3');
 
+//============================SPOILER FEED===================================
+//Desactive spoiler
+const DesactiveSpoiler = () => {
+    imageDataTitle.style.transform ='translateX(-150%)';
+    imageDataText.style.transform ='translateX(200%)';
+    buttonSpoiler.style.transform ='translateY(500%)';
+    photoCostume.style.display='none';
+}
+
+acceptspoiler.addEventListener('click', DesactiveSpoiler);
 
 //==========================PROFILE INFO EDIT=================================
 

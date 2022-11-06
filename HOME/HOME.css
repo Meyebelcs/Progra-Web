@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
-
 :root{
     --primary-color-hue:252;
     --dark-color-lightness:17%;
@@ -24,9 +23,7 @@
     --card-padding: 1rem;
 
     --sticky-top-left: 5.4rem;
-    --sticky-top-right: -18rem;
-
-    
+    --sticky-top-right: -18rem;   
 }
 
 *,
@@ -42,6 +39,7 @@
     border: none;
 
 }
+
 body{
  font-family: 'Poppins', sans-serif;
  color: var(--color-dark);
@@ -414,6 +412,8 @@ line-height: 1.5;
     border-radius: var(--card-border-radius);
     overflow: hidden;
     margin: 0.7rem 0;
+    position: relative;
+    
 }
 
 .middle .feed .action-buttons {
@@ -445,6 +445,64 @@ line-height: 1.5;
 
 .middle .liked-by p{
     margin-left: 0.5rem;
+}
+
+/*----------------SPOILER FEED-----------------*/
+
+
+.middle .feed .photo::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: translateY(0%);
+    transition: transform 0.3s;
+    background-color: rgba(64, 63, 67, 0.903);
+    /*Desactiva el spoiler color transparente
+    display: none;
+    */
+    display: block;
+}
+/*
+.middle .feed .photo:hover::after {
+    100% Para desactivar modo spoiler
+    transform: translateY(100%);
+}*/
+
+.middle .feed .photo .image-data {
+    position:absolute;
+    top: 0;
+    z-index: 1;
+    padding: 1rem;
+    color: white;
+    padding-left: 23%;
+    padding-top: 37%;
+     /*Desactiva el spoiler texto
+   display: none;
+    */
+    display: block;
+    
+}
+
+.image-data_title {
+    transform: translateX(0%);
+    transition: transform 0.3s 0.2s;
+}
+
+.image-data .btn-primary{
+    background: var(--color-primary);
+    color:white;
+    transform: translateY(0%);
+    transition: transform 0.3s 0.2s;
+}
+
+
+.image-data_text {
+    transform: translateX(0%);
+    padding-block-end: 1rem;
+    transition: transform 0.3s 0.2s;
 }
 
 /*=================RIGHT===================*/
