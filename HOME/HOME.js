@@ -9,7 +9,7 @@ const acceptspoiler = document.querySelector('#spoiler-feed');
 const imageDataTitle = document.querySelector('.image-data_title');
 const imageDataText = document.querySelector('.image-data_text');
 const buttonSpoiler = document.querySelector('.image-data .btn-primary');
-const photoCostume = document.querySelector('.middle .feed .photo::after');
+const backspoiler = document.querySelector('.middle .feed .photo');
 
 //-------------------------SIDEBAR--------------------------
 const menuItems = document.querySelectorAll('.menu-item');
@@ -29,8 +29,9 @@ const Bg3= document.querySelector('.bg-3');
 const DesactiveSpoiler = () => {
     imageDataTitle.style.transform ='translateX(-150%)';
     imageDataText.style.transform ='translateX(200%)';
-    buttonSpoiler.style.transform ='translateY(500%)';
-    photoCostume.style.display='none';
+    buttonSpoiler.style.transform ='translateY(800%)';
+    backspoiler.style.setProperty('--photo-after', 'translateY(100%)');
+
 }
 
 acceptspoiler.addEventListener('click', DesactiveSpoiler);
