@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.6/css/unicons.css">
     <!--- STYLESHEET  -->
     <link rel="stylesheet" href="HOME.css">
+    <!--- HASHTAGS  -->
+    <script src="HASHTAGS.js"></script>
 </head>
 <body>
     <nav>
@@ -206,9 +208,6 @@
                                 <div class="ingo">
                                     <h3>  Denisse Cardoza</h3>
                                     <small>  FCFM, HACE 15 MINUTOS</small>
-
-                                   
-                                      
                                 </div>
                             </div>
                             <span class="edit">
@@ -216,8 +215,8 @@
                                 <div class="menu-feed">
                                     <i class="uil uil-pen"></i>
                                     <ul class="menu">
-                                        <li><a href="">Editar</a></li>
-                                        <li><a href="">Eliminar</a></li>
+                                        <li ><p id="btn-Edit-Post" style="position:center;" >Editar</p></li>
+                                        <li ><p id="btn-Eliminar-Post" style="position:center;" >Eliminar</p></li>
                                     </ul>
                                 </div>
                             </span>
@@ -253,8 +252,7 @@
                         </div>
 
                         <div class="caption">
-                        <p> <b>Denisse Cardoza</b> Un poco del festival de Halloween <span
-                            class="harsh-tag">#Halloween</span></p>
+                        <p class="hash-tag"> <b>Denisse Cardoza</b> Un poco del festival de Halloween #Halloween #FCFM #Night #Halloween </p>
                         </div>
 
                         <div class="comments text-muted" style="cursor: pointer;" id="showComments">Ver los 15 comentarios</div>
@@ -1666,6 +1664,141 @@
     </div>
 </div>
 
+<!--=================MAKE PUBLICATION====================-->
+
+<div class="customize-publication">
+    <div class="card">
+        <!------------- PUBLICATION INFO-------------->
+        <div class="publi-info">
+           
+            <form action="Publicacion" id="form-publication" method ="post" class="formulario_register" enctype='multipart/form-data'>
+
+                <h2 class="texted-muted">Crear publicación</h2>
+               
+                <div class="form-control">
+                    <input type="text" id="textoP" name="textoP" class="textoP" placeholder="¿Qué estás pensando?">
+                    <i class="icon check-circle">
+                        <svg 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        width="1em" 
+                        height="1em" 
+                        viewBox="0 0 512 512">
+                        <path 
+                        d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256s114.6 256 256 256zm113-303L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/></svg>
+                    </i>
+                    <i class="icon exclamation-circle">
+                        <svg 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        width="1em" 
+                        height="1em" 
+                        viewBox="0 0 512 512">
+                        <path
+                        d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256s114.6 256 256 256zm0-384c13.3 0 24 10.7 24 24v112c0 13.3-10.7 24-24 24s-24-10.7-24-24V152c0-13.3 10.7-24 24-24zm32 224c0 17.7-14.3 32-32 32s-32-14.3-32-32s14.3-32 32-32s32 14.3 32 32z"/></svg>
+                    </i>
+                    <small class="small_register">Error message</small>
+                </div>
+                
+                <div class="form-control">
+                    <p>Foto</p>
+                    <i class="icon_foto check-circle">
+                        <svg 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        width="1em" 
+                        height="1em" 
+                        viewBox="0 0 512 512">
+                        <path 
+                        d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256s114.6 256 256 256zm113-303L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/></svg>
+                    </i>
+                    <i class="icon_foto exclamation-circle">
+                        <svg 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        width="1em" 
+                        height="1em" 
+                        viewBox="0 0 512 512">
+                        <path
+                        d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256s114.6 256 256 256zm0-384c13.3 0 24 10.7 24 24v112c0 13.3-10.7 24-24 24s-24-10.7-24-24V152c0-13.3 10.7-24 24-24zm32 224c0 17.7-14.3 32-32 32s-32-14.3-32-32s14.3-32 32-32s32 14.3 32 32z"/></svg>
+                    </i>
+                    <small class="small_foto">Error message</small>
+                    <input accept="image/*" class="input_foto" type="file" id="fotoP" name="fotoP" value="null">
+                    <p>Spoiler</p>
+                    <input class="input_spoiler" type="checkbox" id="spoiler" name="spoiler">
+                </div>
+                <button class=" btn btn-profile-info" type="subtmit" id="publish" >Publicar</button>
+                 <button class=" btn btn-profile-info" type="button" id="Close" >Cerrar</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!--=================EDIT PUBLICATION====================-->
+
+<div class="customize-publication-edit">
+    <div class="card">
+        <!------------- PUBLICATION INFO-------------->
+        <div class="publi-info">
+           
+            <form action="Publicacion" id="form-Editpublication" method ="post" class="formulario_register" enctype='multipart/form-data'>
+
+                <h2 class="texted-muted">Editar publicación</h2>
+               
+                <div class="form-control">
+                    <input type="text" id="textoEditP" name="textoEditP" class="textoP" placeholder="aqui va el texto o vacio segun la base de datos">
+                    <i class="icon check-circle">
+                        <svg 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        width="1em" 
+                        height="1em" 
+                        viewBox="0 0 512 512">
+                        <path 
+                        d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256s114.6 256 256 256zm113-303L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/></svg>
+                    </i>
+                    <i class="icon exclamation-circle">
+                        <svg 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        width="1em" 
+                        height="1em" 
+                        viewBox="0 0 512 512">
+                        <path
+                        d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256s114.6 256 256 256zm0-384c13.3 0 24 10.7 24 24v112c0 13.3-10.7 24-24 24s-24-10.7-24-24V152c0-13.3 10.7-24 24-24zm32 224c0 17.7-14.3 32-32 32s-32-14.3-32-32s14.3-32 32-32s32 14.3 32 32z"/></svg>
+                    </i>
+                    <small class="small_register">Error message</small>
+                </div>
+
+                <div class="photo-edit-post">
+                    <img class="edit-pic" src="../images/feed-1.jpg">
+                </div>
+                
+                <div class="form-control">
+                    <i class="icon_foto check-circle">
+                        <svg 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        width="1em" 
+                        height="1em" 
+                        viewBox="0 0 512 512">
+                        <path 
+                        d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256s114.6 256 256 256zm113-303L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/></svg>
+                    </i>
+                    <i class="icon_foto exclamation-circle">
+                        <svg 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        width="1em" 
+                        height="1em" 
+                        viewBox="0 0 512 512">
+                        <path
+                        d="M256 512c141.4 0 256-114.6 256-256S397.4 0 256 0S0 114.6 0 256s114.6 256 256 256zm0-384c13.3 0 24 10.7 24 24v112c0 13.3-10.7 24-24 24s-24-10.7-24-24V152c0-13.3 10.7-24 24-24zm32 224c0 17.7-14.3 32-32 32s-32-14.3-32-32s14.3-32 32-32s32 14.3 32 32z"/></svg>
+                    </i>
+                    <small class="small_foto">Error message</small>
+                    <input accept="image/*" class="input_foto" type="file" id="fotoEditP" name="fotoEditP" value="null">
+                    <p>Spoiler</p>
+                    <input class="input_spoiler" type="checkbox" id="spoiler" name="spoiler">
+                </div>
+                <button class=" btn btn-profile-info" type="subtmit" id="publish" >Guardar</button>
+                 <button class=" btn btn-profile-info" type="button" id="EditClose" >Cancelar</button>
+            </form>
+        </div>
+    </div>
+</div>
+
 <!---------------------------FOOTER--------------------------->
 <div class="footer-content">
 
@@ -1673,7 +1806,7 @@
 <footer>
     <div class="footer-content">
        
-        <h2>Facultad de Ciencias Físico Matemáticas</h2>
+        <h2> <b>Facultad de Ciencias Físico Matemáticas</b> </h2>
         <h3>Programación Web</h3>
         <h1>1904119 Melany Arleth Jiménez Gómez </h1>
         <h1>1896868 Denisse Alejandra Cardoza Pezina </h1>

@@ -32,6 +32,199 @@ const Bg1= document.querySelector('.bg-1');
 const Bg2= document.querySelector('.bg-2');
 const Bg3= document.querySelector('.bg-3');
 
+//------------------------------PUBLICATION---------------------------------
+const publicationModal = document.querySelector('.customize-publication');
+const publicationclick = document.querySelector('#create-post');
+const publicationcerrar = document.querySelector('#Close');
+
+const Nombres= document.getElementById("nombresE");
+const Apellidos= document.getElementById("apellidosE");
+const Correo= document.getElementById("CorreoE");
+const Contraseña= document.getElementById("ContraseñaE");
+const Contraseña2= document.getElementById("ConfirmarContraseñaE");
+const Fecha= document.getElementById("fechaE");
+const Foto= document.getElementById("fotoE");
+
+const Texto= document.getElementById("textoP");
+const FotoP= document.getElementById("fotoP");
+
+//------------------------------EDIT PUBLICATION---------------------------------
+const EditpublicationModal = document.querySelector('.customize-publication-edit');
+const Editpublicationclick = document.querySelector('#btn-Edit-Post');
+const Editpublicationcerrar = document.querySelector('#EditClose');
+
+const EditNombres= document.getElementById("nombresE");
+const EditApellidos= document.getElementById("apellidosE");
+const EditCorreo= document.getElementById("CorreoE");
+const EditContraseña= document.getElementById("ContraseñaE");
+const EditContraseña2= document.getElementById("ConfirmarContraseñaE");
+const EditFecha= document.getElementById("fechaE");
+const EditFoto= document.getElementById("fotoE");
+
+const EditTexto= document.getElementById("textoEditP");
+const EditFotoP= document.getElementById("fotoEditP");
+//==========================EDIT PUBLICATION=================================
+
+const openPublicationEditModal = () => {
+    EditpublicationModal.style.display = 'grid';
+};
+
+const closePublicationEditModal = (e) => {
+    EditpublicationModal.style.display = 'none';
+};
+
+
+Editpublicationclick.addEventListener('click', openPublicationEditModal);
+
+Editpublicationcerrar.addEventListener('click', closePublicationEditModal);
+
+
+function setErrorFor(input, message){
+    const formControl=input.parentElement;//.form-control
+    const small=formControl.querySelector('small');
+
+    if(input=Foto){
+        //add error message inside mall
+        small.innerText=message;
+
+        //add error class
+        formControl.className='form-control error';
+    }else{
+        //add error message inside mall
+        small.innerText=message;
+
+        //add error class
+        formControl.className='form-control error';
+    }
+}
+
+function setSuccesFor(input){
+    const formControl=input.parentElement;
+    formControl.className='form-control success';
+}
+
+$("#form-Editpublication").submit(function publicacion() {
+
+
+        var ok=0;
+
+
+        if(EditTexto.value.length<1 && EditFotoP.files.length===0){ //Valida solo incluir letras alfabeto español}
+             alert("vacios edit public");
+            setErrorFor(EditTexto,"El campo no puede estar vacío");
+            setErrorFor(EditFotoP,"El campo no puede estar vacío");
+        }else{
+            setSuccesFor(Nombres);
+            setsuccesFor(EditFotoP);
+            ok++;
+        }
+
+           if(ok<1){
+             return false;
+         }else if (ok===1){
+             return true;
+         }
+
+
+    });
+
+//==========================PUBLICATION=================================
+
+const openPublicationModal = () => {
+    publicationModal.style.display = 'grid';
+};
+
+const closePublicationModal = (e) => {
+    publicationModal.style.display = 'none';
+};
+
+
+publicationclick.addEventListener('click', openPublicationModal);
+
+publicationcerrar.addEventListener('click', closePublicationModal);
+
+
+function getAge(date){
+
+    var today=new Date();
+    var birthday= new Date(date);
+    var year= today.getFullYear()-birthday.getFullYear();
+    var month=today.getMonth()-birthday.getMonth();
+    if(month<0||(month==0 && today.getDate()-1<birthday.getDate())){
+        year--;
+    }
+    return year;
+}
+
+function validateDate(date){
+
+    var today=new Date();
+    var birthday= new Date(date);
+    if(birthday>today){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+function setErrorFor(input, message){
+    const formControl=input.parentElement;//.form-control
+    const small=formControl.querySelector('small');
+
+    if(input=Foto){
+        //add error message inside mall
+        small.innerText=message;
+
+        //add error class
+        formControl.className='form-control error';
+    }else{
+        //add error message inside mall
+        small.innerText=message;
+
+        //add error class
+        formControl.className='form-control error';
+    }
+}
+
+function setSuccesFor(input){
+    const formControl=input.parentElement;
+    formControl.className='form-control success';
+}
+$("#form-publication").submit(function publicacion() {
+
+
+        var ok=0;
+
+
+        if(Texto.value.length<1 && FotoP.files.length===0){ //Valida solo incluir letras alfabeto español}
+             alert("vacios");
+            setErrorFor(Texto,"El campo no puede estar vacío");
+            setErrorFor(FotoP,"El campo no puede estar vacío");
+        }else{
+            setSuccesFor(Nombres);
+            setsuccesFor(FotoP);
+            ok++;
+        }
+
+           if(ok<1){
+             return false;
+         }else if (ok===1){
+             return true;
+         }
+
+
+    });
+
+//============================HASHTAGS==================================
+Hashtag.setOptions({
+    templates: {
+        'twitter': '<a href="https://twitter.com/hashtag/{#n}">{#}</a>',
+        'fb': '<a href="https://www.facebook.com/hashtag/{#n}">{#}</a>'
+    }
+});
+
+Hashtag.replaceTags('.hash-tag', 'fb');
+
 //============================SPOILER FEED===================================
 //Desactive spoiler
 const DesactiveSpoiler = () => {
