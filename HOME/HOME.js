@@ -14,6 +14,14 @@ const backspoiler = document.querySelector('.middle .feed .photo');
 //-------------------------SIDEBAR--------------------------
 const menuItems = document.querySelectorAll('.menu-item');
 
+//-----------------------SHOW COMMENTS---------------------------
+const ShowComments = document.querySelector('#showComments');
+const comments = document.querySelector('.contenedor-comentarios');
+
+//--------------------LIKE--------------------------------
+const liked = document.querySelector('#likeheart');
+const LikeChange = document.querySelectorAll('.likedHeart');
+
 //-------------------------NIGHT MODE--------------------------
 const theme = document.querySelector('#theme');
 const themeModal = document.querySelector('.customize-theme');
@@ -35,7 +43,31 @@ const DesactiveSpoiler = () => {
 }
 
 acceptspoiler.addEventListener('click', DesactiveSpoiler);
+//==========================LIKE=================================
 
+//SHOW LIKE
+const paintLike = () => {
+
+    if( document.getElementById('likeheart').style.color == 'var(--color-heart-active)'){
+        document.getElementById('likeheart').style.color = 'var(--color-heart)'; 
+    }else{
+        document.getElementById('likeheart').style.color = 'var(--color-heart-active)'
+    }
+}
+
+liked.addEventListener('click', paintLike);
+//==========================SHOW COMMENTS=================================
+
+//opens comments
+const showComments = () => {
+    if(comments.style.display == 'flex'){
+        comments.style.display = 'none'
+    }else{
+        comments.style.display = 'flex'
+    }
+}
+
+ShowComments.addEventListener('click', showComments);
 //==========================PROFILE INFO EDIT=================================
 
 //opens modal

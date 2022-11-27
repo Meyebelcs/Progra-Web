@@ -26,6 +26,9 @@
     --sticky-top-right: -18rem;   
 
     --photo-after: translateY(0%);
+
+    --color-heart-active: #F90B0B;
+    --color-heart: #020101;
 }
 
 *,
@@ -424,6 +427,11 @@ line-height: 1.5;
     align-items: center;
     font-size: 1.4rem;
     margin: 0.6rem;
+    cursor:pointer;
+}
+
+.likedHeart{
+    color: var(--color-heart); 
 }
 
 .middle .liked-by {
@@ -924,10 +932,11 @@ margin-top: 10rem;
 
 /*-------------COMENTS--------------------*/
 .contenedor-comentarios {
-    display: flex;
+    display: none;
     flex-wrap: wrap;
     flex-direction: column;
     width: 100%;
+   
 }
 
 .contenedor-comentarios img {
@@ -948,6 +957,19 @@ margin-top: 10rem;
 .comentarios-usuarios {
     width: calc(100% - 2.5rem);
 }
+/*--------SPOILER COMMENTS----*/
+.texto .commentspoiler{
+ background-color: #2e042c;
+ color:  #2e042c;
+ border-radius: 12px;
+}
+.texto .commentspoiler:hover{
+    background-color: var(--color-white);
+    color:  #000000;
+    border-radius: 12px;
+   }
+
+/*------------*/
 
 .contenedor-comentarios a {
     text-decoration: none;
@@ -969,7 +991,7 @@ margin-top: 10rem;
     margin-right: .5rem;
     color: inherit;
 }
-/* botones comentar */
+/* --------botones comentar----------- */
 .boton-subir-archivo {
     position: relative;
     display: inline-block;
@@ -1053,6 +1075,61 @@ margin-top: 10rem;
     position: relative;
 }
 
+/*--------------menu feed-------------------*/
+.menu-feed {
+    position: relative;
+    top: -20px;
+    width: 30px;
+    height: 30px;
+    background-color: #E9E9E9;
+    border-radius: 50%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.feed .head .menu-feed {
+    box-shadow: 0 0 5px rgba(0, 0, 0, .4);
+}
+
+.feed .head:hover .menu-feed {
+    display: flex;
+}
+
+.publicacion-realizada .menu-feed {
+    display: flex;
+    right: 0;
+}
+
+.menu-feed .menu {
+    list-style: none;
+    position: absolute;
+    right: 100%;
+    background-color: #fff;
+    box-shadow: 0 0 5px 1px rgba(0, 0, 0, .2);
+    border-radius: 8px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all ease-in 200ms;
+}
+
+.menu-feed:hover .menu {
+    opacity: 1;
+    visibility: visible;
+}
+
+.menu-feed .menu a {
+    display: block;
+    padding: 7px 15px;
+    color: inherit;
+}
+
+.menu-feed .menu a:hover {
+    background-color: #E1E1E1;
+}
+/*---------------------*/
 .menu-comentario {
     position: absolute;
     width: 30px;
@@ -1064,6 +1141,8 @@ margin-top: 10rem;
     justify-content: center;
     cursor: pointer;
 }
+
+
 
 .comentarios-usuarios .usuario-comentario .menu-comentario {
     top: 5px;
@@ -1217,6 +1296,24 @@ margin-top: 10rem;
     list-style: none;
     font-size: 0.8em;
     color: #909090;
+}
+/*--------------FINAL BUTTONS------------------*/
+.final-buts{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    text-align: center;
+   
+}
+.final-buttons{
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    display: flex;
+    text-align: center;
+    margin: 3%;
+    background-color: var(--color-secondary);
+    border-style: dashed;
 }
 
 /*=========================
