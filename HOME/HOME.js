@@ -37,14 +37,6 @@ const publicationModal = document.querySelector('.customize-publication');
 const publicationclick = document.querySelector('#create-post');
 const publicationcerrar = document.querySelector('#Close');
 
-const Nombres= document.getElementById("nombresE");
-const Apellidos= document.getElementById("apellidosE");
-const Correo= document.getElementById("CorreoE");
-const Contraseña= document.getElementById("ContraseñaE");
-const Contraseña2= document.getElementById("ConfirmarContraseñaE");
-const Fecha= document.getElementById("fechaE");
-const Foto= document.getElementById("fotoE");
-
 const Texto= document.getElementById("textoP");
 const FotoP= document.getElementById("fotoP");
 
@@ -53,16 +45,37 @@ const EditpublicationModal = document.querySelector('.customize-publication-edit
 const Editpublicationclick = document.querySelector('#btn-Edit-Post');
 const Editpublicationcerrar = document.querySelector('#EditClose');
 
-const EditNombres= document.getElementById("nombresE");
-const EditApellidos= document.getElementById("apellidosE");
-const EditCorreo= document.getElementById("CorreoE");
-const EditContraseña= document.getElementById("ContraseñaE");
-const EditContraseña2= document.getElementById("ConfirmarContraseñaE");
-const EditFecha= document.getElementById("fechaE");
-const EditFoto= document.getElementById("fotoE");
-
 const EditTexto= document.getElementById("textoEditP");
 const EditFotoP= document.getElementById("fotoEditP");
+
+//------------------------------DELETE PUBLICATION---------------------------------
+const DeletepublicationModal = document.querySelector('.customize-delete-post');
+const Deletepublicationclick = document.querySelector('#btn-Eliminar-Post');
+const Deletepublicationcerrar = document.querySelector('#DeleteClose');
+
+const Deletepublication = document.querySelector('#Delete-post');
+
+//==========================DELETE PUBLICATION=================================
+
+const openPublicationDeleteModal = () => {
+    DeletepublicationModal.style.display = 'grid';
+};
+
+const closePublicationDeleteModal = (e) => {
+    DeletepublicationModal.style.display = 'none';
+};
+
+const PublicationDelete= (e) => {
+    alert('se eliminó');
+    DeletepublicationModal.style.display = 'none';
+};
+
+Deletepublicationclick.addEventListener('click', openPublicationDeleteModal);
+
+Deletepublicationcerrar.addEventListener('click', closePublicationDeleteModal);
+
+Deletepublication.addEventListener('click', PublicationDelete);
+
 //==========================EDIT PUBLICATION=================================
 
 const openPublicationEditModal = () => {

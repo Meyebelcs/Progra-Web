@@ -274,8 +274,8 @@
                                                 <div class="menu-comentario">
                                                     <i class="uil uil-pen"></i>
                                                     <ul class="menu">
-                                                        <li><a href="">Editar</a></li>
-                                                        <li><a href="">Eliminar</a></li>
+                                                        <li ><p id="btn-Edit-Comment" style="position:center;" >Editar</p></li>
+                                                        <li ><p id="btn-Eliminar-Comment" style="position:center;" >Eliminar</p></li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -309,8 +309,8 @@
                                                             <div class="menu-comentario">
                                                                 <i class="uil uil-pen"></i>
                                                                 <ul class="menu">
-                                                                    <li><a href="">Editar</a></li>
-                                                                    <li><a href="">Eliminar</a></li>
+                                                                    <li ><p id="btn-Edit-Comment2" style="position:center;" >Editar</p></li>
+                                                                    <li ><p id="btn-Eliminar-Comment2" style="position:center;" >Eliminar</p></li>
                                                                 </ul>
                                                             </div>
                                                         </div>
@@ -347,6 +347,13 @@
                                         </center>
                                        </button>
                                    </form>
+                                   <div style="margin-left: 10px;">
+                                    <p>Spoiler</p>
+                                    <center>
+                                    <input  value="spoiler"  class="input_spoiler" type="checkbox" id="spoiler" name="spoiler">
+                                    </center>
+                                   </div>
+                                   
                                 </div>
                                 
                             </div>
@@ -1473,6 +1480,17 @@
                 </div>
             </div>
         </div>
+    </div>
+</div>
+
+<!--=================DELETE POST====================-->
+<div class="customize-delete-post">
+    <div class="card">
+        <h2>Eliminar Publicación</h2>
+        <p class="texted-muted">¿Seguro que desea eliminar esta publicación?</p>
+
+        <button class=" btn btn-profile-info" type="subtmit" id="Delete-post" >Eliminar</button>
+        <button class=" btn btn-profile-info" type="button" id="DeleteClose" >Cancelar</button>
     </div>
 </div>
 
